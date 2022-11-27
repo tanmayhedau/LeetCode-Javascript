@@ -1,0 +1,459 @@
+DOM :- https://thewebfor5.com/p/javascript/the-dom/
+
+WHAT IS JS :- https://www.freecodecamp.org/news/what-is-javascript-definition-of-js/
+
+JavaScript is a dynamic programming language that's used for web development, in web applications, for game development, and lots more. It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS.
+You'll see that as you type in the input field, the text shows on the screen. That is made possible by JavaScript. You cannot get this with HTML, CSS, nor both of them together.
+
+//=====================================================================
+
+HOW DOES JS WORK :- https://www.freecodecamp.org/news/execution-context-how-javascript-works-behind-the-scenes/
+
+All js code need to be hosted and run in some kind of environment, i.e web browser.Browser doesn't natively understand the js code that we write in our appln. It need to be converted into the browser and our computers can understand machine code. 
+
+While reading through HTML, if the browser encounters JavaScript code to run via a <script> tag or an attribute that contains JavaScript code like onClick, it sends it to its JavaScript engine.
+
+The browser's JavaScript engine then creates a special environment to handle the transformation and execution of this JavaScript code. This environment is known as the Execution Context.
+
+The Execution Context contains the code that's currently running, and everything that aids in its execution.
+
+During the Execution Context run-time, the specific code gets parsed by a parser, the variables and functions are stored in memory, executable byte-code gets generated, and the code gets executed.
+
+
+//=====================================================================
+
+WHAT IS AN ASYNCHRONOUS OPERATION :- 
+
+Q 2 what is an asynchronous operation? Is java script synchronous or asynchronous 
+
+Answer
+
+An asynchronous operation means if our line of code is taking some time to execute that piece of code then it skip that part of code and go to the next line and execute the next line after that it will execute that line  
+For example 
+
+Here's an example: Data may take long a long time to submit to a database. With asynchronous programming, the user can move to another screen while the function continues to execute. When a photo is loaded and sent on Instagram, the user does not have to stay on the same screen waiting for the photo to finish loading user can do other activities while photo is uploading 
+
+
+Java script synchornius Or not 
+
+Answer 
+
+JavaScript is a single-threaded, non-blocking, synchronous, concurrent programming language with lots of flexibility.
+
+//=======================================================================
+
+Q 3 explain async using set timeout 
+
+Answer
+
+setTimeout(function() {console.log("hello this is asynchronous  line 2 ")}, 10);
+console.log("this is line 3rd ")
+
+ output     
+
+This is line 3rd 
+Hello this is asynchronous line 2 
+
+
+Because using set time out we are changing default behaviour of Java script and making it Asynchronous
+
+Set time out is taking time to execute the piece of CODE that's why compiler IS executing the next line after that it is printing the set time out line of code
+
+//=========================================================================
+
+Q 4 js is a single threaded or multi threaded?? 
+
+Answer 
+
+Java script is single threaded it execute one task at a time 
+
+It reads all the code line by line 
+
+But we can change it's default behaviour using set time out
+
+//=========================================================================
+
+Q 5 is Java script synchronous or asynchronous language??? 
+
+Answer 
+
+Java script by default synchronous language 
+
+We can make it Asynchronous by using set timeout  or other special functions if we need it.
+
+//=========================================================================
+Q 6 difference between var, let and const 
+Answer 
+
+We can declare one variable two times with var key word 
+Example 
+Var a = 5
+Var a = 10
+
+It will not give any error
+
+Let and const are block scope variable declaration key word 
+
+In let we can reassign value's
+
+In const 
+Once assigned never can be changed 
+
+In const object we can not change keys name
+
+//=========================================================================
+
+Q 7 what is hoisting ??
+
+In JavaScript, Hoisting is the default behavior of moving all the declarations at the top of the scope before code execution. Basically, it gives us an advantage that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local.
+
+
+Example 
+
+Console.log(a) 
+
+Var a =5
+It will not give error it says 
+Undefined 
+But if we use let or const then it gives error
+
+Example 2 
+
+
+Fun() 
+
+
+Function fun() {
+
+Console.log("function calling") 
+
+}
+
+We are calling function before declaration this is allowed because of java script's default behaviour called hoisting 🤟
+
+
+Perfect one line example
+
+//=========================================================================
+Q 8 what is promise?? What are the states of promises 
+What is promisify
+
+
+Answer 
+
+In JavaScript, a promise is a placeholder (proxy) for the value of an ongoing operation
+
+
+-> Promise is a JS object that represents whether an asynchronous operation like DB or axios call is completed or not.
+→ Promise has three states :- Pending, rejected and fulfilled.
+
+
+Promisify
+
+The util.promisify() method defines in utilities module of Node.js standard library. It is basically used to convert a method that returns responses using a callback function to return responses in a promise object. 
+
+//==========================================================================
+
+what is async await?
+
+We use the async keyword with a function to represent that the function is an asynchronous function. The async function returns a promise.
+
+The await keyword is used inside the async function to wait for the asynchronous operation.The use of await pauses the async function until the promise returns a result (resolve or reject) value.
+
+//===========================================================================
+Difference between promise and async & await. Is async await notation preferred over promises? If so, why?
+
+Promise is a JS object that represents whether an asynchronous operation is completed or not. Promises have 3 states, these states are pending, resolved, and rejected. Error handling can be done with .then() and .catch() methods. Debugging can be very tricky with multiple promise chaining.
+
+Async await does not have states. Async functions return a promise. This promise state can be either resolved or rejected. Error handling can be done with a try-catch block.Debugging is much easier with async/await.
+
+If you are using another asynchronous function which is depending on the first asynchronous function, you should use await to wait first one to finish instead of promise chaining.
+
+//=================================================================================
+What are JavaScript Objects ? how to create them?
+
+JavaScript object is a non-primitive data-type that allows you to store multiple collections of data. Each member of an object is a key: value pair.
+
+5 different methods--  Creating objects using object literal syntax, Creating objects using the ‘new’ keyword, Using Object.create() to create new objects, Using Object.assign() to create new objects, Using ES6 classes to create objects
+
+//================================================================================
+How to search for a value or a key in an object?
+
+You can use the JavaScript in operator to check if a specified property/key exists in an object. It has a straightforward syntax and returns true if the specified property/key exists in the specified object . You can also use the JavaScript hasOwnProperty() method to check if a specified object has the given property as its property. This method is pretty similar to the in operator. 
+There are some predefined functions using that we can search keys, values and all the entries 
+
+If we want to search keys Then we can use this syntax -- Object.keys(objname) 
+
+If we want to search only values then we can use -- Object.values(objname)
+
+//=============================================================================================
+What is a callback function?
+
+In JavaScript, you can also pass a function as an argument to a function. This function that is passed as an argument inside of another function is called a callback function. 
+
+//==================================================================================================
+
+What are the drawbacks of callback and what is callback hell?
+
+Callback Hell: Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code.
+
+//=================================================================================================
+
+What is the difference between callback and promise. How can you write the same async operation using promise and callback?
+
+A Callback is a function that we call inside another function. A callback may or may not performed asynchronously.
+
+A Promise is an object which takes a callback and executes it asynchronously. A promise is considered easier to use and to maintain than callbacks.A promise did not remove the use of callbacks, but it made the chaining of functions straightforward and simplified the code, making it much easier to read.If you will compare the Promise code, it is much more readable then Callback function code.
+
+
+//====================================================================================================
+
+Difference between function and arrow function
+
+In regular function, arguments will give you list of parameter passed in function, In arrow function arguments is not defined. In regular function, you always have to return any value, but in Arrow function you can skip return keyword and write in single line. In arrow function parameters should be unique
+
+Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows you to create functions in a cleaner way compared to regular functions.
+
+//===================================================================================================
+
+Difference between i++ and ++i
+
+++i (pre-increment) will increment the value of i , and then return the incremented value. i++ (post-increment) will increment the value of i , but return the original value that i held before being incremented.
+
+//===================================================================================================
+
+What is the "this" operator?
+
+"This" keyword refers to an object that is executing the current piece of code. It references the object that is executing the current function. If the function being referenced is a regular function, "this" references the global object. If the function that is being referenced is a method in an object, "this" references the object itself.
+
+//===================================================================================================
+
+What is the closure concept?
+
+Whenenver we create a function inside a function we can easily access the properties of the parent function in the inner function this is called closure.
+
+//===================================================================================================
+
+What is json? What do the functions json.parse and json.stringify do?
+
+JSON stands for Javascript Object Notation. JSON is a text-based data format that is used to store and transfer data. For example, // JSON syntax { "name": "John", "age": 22, "gender": "male", } In JSON, the data are in key/value pairs separated by a comma , . JSON was derived from JavaScript.
+
+The JSON.parse() method parses a string and returns a JavaScript object.
+
+The JSON.stringify() method converts a JavaScript object to a JSON string.
+
+//===================================================================================================
+
+What is the difference between '==' and '===' operators?
+
+Double equal is used when we want to check and compare values and not there data type
+
+Example 
+Let a=5
+Let b="5"
+
+Console.log(a==b) //true
+
+Triple equal is used when we want to compare values as well as data type 
+
+Let a=5
+Let b="5"
+
+Console.log(a===b) //false
+
+//===================================================================================================
+
+What is the typeof operator? What is NaN?
+
+Answer 
+Typeof  is used to check the type of the data 
+
+Example 
+
+Let a = 5 
+
+Console.log(typeof a)  // number 
+
+Here the data type of a is number 
+
+
+In JavaScript, NaN is short for "Not-a-Number". In JavaScript, NaN is a number that is not a legal number. The Number. isNaN() method returns true if the value is NaN , and the type is a Number
+
+Example 
+
+If  we want to calculate two variables and one of them is not holding the number value then we face this NaN error
+
+Example 
+
+Let a = "vikram"
+Let b = 5
+Let c  = a*b
+
+Console.log(c) // output NaN
+Console.log(isNaN(a))// output true 
+
+Because a is not a number a is a string data type
+
+//====================================================================================================
+
+What are settimeout and setinterval functions and what is the difference between them?
+
+
+Answer 
+As JavaScript is a singly-threaded language, both methods allow your code to run asynchronously
+
+
+Simple term 
+
+setTimeout allows us to run a function once after the interval of time.
+
+ setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval
+
+
+Example 
+
+
+//console.log("wow")
+setTimeout(function() {console.log("hello")}, 10);
+console.log("wanted")
+
+
+Settimeout only run once 
+
+
+setInterval(function () {console.log("setInterval")}, 10);
+
+
+Setinterval runs repeteadly after the give time
+Like a loop 
+
+It will not stop the execution 
+So we need to use this function inside a function where we need to specify the condition to stop this loop
+
+//===================================================================================================
+
+What is functional scope and block scope?
+
+Answer 
+Functional scope 
+JavaScript has function scope: Each function creates a new scope. Variables defined inside a function are not accessible (visible) from outside the function. Variables declared with var , let and const are quite similar when declared inside a function
+
+Function scope: Variables that are declared inside a function are called local variables and in the function scope. Local variables are accessible anywhere inside the function. We can not access out side the function
+
+Example of function scope
+function fun(){
+  let a = 5
+  const b = 19
+  var c = 89
+}
+
+fun()
+
+console.log(a) // a is not defined
+console.log(b) // b is not defined
+console.log(c) // c is not defined
+
+
+We can not access outside the variables which are declared inside a function 
+This is called function scope
+
+Block scope 
+
+Block scope: Variable that is declared inside a specific block & can't be accessed outside of that block
+
+Example
+
+
+Let and const are block scope key word
+
+Example of block scope
+
+{
+  let a = 7
+  const  b = 9
+  var c = 10
+  
+}
+
+console.log(a)
+ // give not defined error
+console.log(b)
+// give not defined error
+console.log(c)
+// it gives output 10
+
+
+Because using var if we declare variable it is declared global scope so we can use it out side of block
+
+//=================================================================================================================================
+
+What is shallowCopy and deepCopy?
+
+Deep copy means that all of the values of the new variable are copied and disconnected from the original variable.
+
+A shallow copy means that certain (sub-)values are still connected to the original variable.
+
+//=================================================================================================================================
+
+What is the difference between map and filter? 
+
+The filter() method creates an array filled with all array elements that pass a test implemented by the provided function. The filter method is well suited for particular instances where the user must identify certain items in an array with a common characteristic. 
+
+The map() method creates a new array with the results of calling a function for every array element. The map method allows items in an array to be manipulated to the user’s preference, returning the conclusion of the chosen manipulation in an entirely new array. 
+
+//==================================================================================================================================
+
+Explain math, the built-in javascript object, and functionalities. 
+
+Math is one of JavaScript's global or standard built-in objects and can be used anywhere you can use JavaScript. The math object provides you with properties and methods for mathematical constants and functions. Unlike other global objects, Math is not a constructor. All the properties and methods of Math are static and can be called by using Math as an object without creating it. It contains useful constants like π and Euler’s constant and functions such as floor(), round(), and ceil().
+
+//=================================================================================================================================
+
+What is ES6? Explain some features of ES6 
+ECMAScript 2015 was the second major revision to JavaScript. ECMAScript 2015 is also known as ES6 and ECMAScript 6.
+
+Here are some features of ES6 - 
+
+let and const keywords: The keyword "let" enables the users to define variables and on the other hand, "const" enables the users to define constants. Variables were previously declared using "var" which had function scope and were hoisted to the top. It means that a variable can be used before declaration. But, the "let" variables and constants have block scope which is surrounded by curly-braces "{}" and cannot be used before declaration.
+
+Arrow Functions: ES6 provides a feature known as Arrow Functions. It provides a more concise syntax for writing function expressions by removing the "function" and "return" keywords.
+
+Multi-line Strings: ES6 also provides Multi-line Strings. Users can create multi-line strings by using back-ticks(`).
+
+Template Literals: ES6 introduces very simple string templates along with placeholders for the variables. The syntax for using the string template is ${PARAMETER} and is used inside of the back-ticked string.
+
+Classes: Previously, classes never existed in JavaScript. Classes are introduced in ES6 which looks similar to classes in other object-oriented languages, such as C++, Java, PHP, etc. But, they do not work exactly the same way. ES6 classes make it simpler to create objects, implement inheritance by using the "extends" keyword and also reuse the code efficiently. In ES6, we can declare a class using the new "class" keyword followed by the name of the class.
+
+//=================================================================================================================================
+
+Difference between typescript & javascript.
+
+When JavaScript was developed, the JavaScript development team introduced JavaScript as a client-side programming language. But as people were using JavaScript, developers also realized that JavaScript could be used as a server-side programming language. 
+
+However, as JavaScript was growing, JavaScript code became complex and heavy. Because of this, JavaScript wasn’t even able to fulfill the requirement of an Object-Oriented Programming language. This prevented JavaScript from succeeding at the enterprise level as a server-side technology. So TypeScript was created by the development team to bridge this gap.
+
+Differences: 
+TypeScript is known as an Object-oriented programming language whereas JavaScript is a scripting language. 
+TypeScript has a feature known as Static typing but JavaScript does not support this feature. 
+TypeScript supports Interfaces but JavaScript does not. 
+TypeScript is Strongly typed, supports both static and dynamic typing. While JavaScript is Weakly typed, no option for static typing.
+TypeScript is Converted into JavaScript code to be understandable for browsers. Can be directly used in browsers.
+Supports modules, generics and interfaces to define data. No support for modules, generics or interfaces.
+
+Advantages of using TypeScript over JavaScript:
+TypeScript always points out the compilation errors at the time of development (pre-compilation). Because of this getting runtime errors is less likely, whereas JavaScript is an interpreted language. 
+TypeScript supports static/strong typing. This means that type correctness can be checked at compile time. This feature is not available in JavaScript. 
+TypeScript is nothing but JavaScript and some additional features i.e. ES6 features. It may not be supported in your target browser but the TypeScript compiler can compile the .ts files into ES3, ES4, and ES5 also.
+
+
+
+
+
+
+
+
+
+
+
+
+
