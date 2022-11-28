@@ -8,6 +8,8 @@ var topKFrequent = (nums,k) => {
         }
     }
 
+    // return Object.keys(map).sort((a,b)=> map[b]-map[a]).slice(0,k)
+
     let bucket =[];
     for(let i=0; i<= nums.length; i++){
         bucket.push([]);
