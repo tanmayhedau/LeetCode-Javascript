@@ -19,5 +19,5 @@ function solution(nums1, m, nums2, n) {
 }
 
 let res = solution([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
-// console.log(res)
+console.log(res)
 
