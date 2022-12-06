@@ -5,11 +5,11 @@ let sum = 0,
   tmax = 0;
 for (let i = 0; i < arr.length; i++) {
   if (arr[i] > max) {
-    tmax = max;
+    tmax = smax;
     smax = max;
     max = arr[i];
   } else if (arr[i] > smax) {
-    tmax = max;
+    tmax = smax;
     smax = arr[i];
   } else if (arr[i] > tmax) {
     tmax = arr[i];
@@ -17,3 +17,4 @@ for (let i = 0; i < arr.length; i++) {
 }
 sum = max + smax + tmax;
 console.log(sum, "=>", max, smax, tmax);
+
