@@ -1,36 +1,47 @@
-function sort(arr) {
-  if (arr.length <= 1) return arr;
-  let mid = Math.floor(arr.length / 2);
+const swap = (arr, left, right) => {
+  let temp = arr[left];
+  arr[left] = arr[right];
+  arr[right] = temp;
+};
 
-  let left = sort(arr.slice(0, mid));
-  let right = sort(arr.slice(mid));
+const partition = (arr, low, high) => {
+  let pivot_element = arr[high];
 
-   merge(left, right);
-   
-}
-
-function merge(arr1, arr2) {
-  let i = 0,
-    j = 0,
-    res = [];
-  while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] < arr2[j]) {
-      res.push(arr1[i]);
+  let i = low - 1;
+  for (let j = low; j < high; j++) {
+    if (arr[j] < pivot_element) {
       i++;
-    } else {
-      res.push(arr2[j]);
-      j++;
-    }
-    while (i < arr1.length) {
-      res.push(arr1[i]);
-      i++;
-    }
-    while (j < arr2.length) {
-      res.push(arr2[j]);
-      j++;
+      swap(arr, i, j);
     }
   }
-  return res
-}
 
-console.log(sort([5,4,6,7,2,8]))
+  swap(arr, i + 1, high);
+  return i + 1;
+};
+
+const kthlargestElement = (arr, low, high, k) => {
+  let resultIndex = arr.length - k;
+
+  while (low < high) {
+    let pivot_index = partition(arr, low, high);
+    if (resultIndex == pivot_index) return arr[pivot_index];
+
+    if (resultIndex < pivot_index) high = pivot_index - 1;
+    else low = pivot_index + 1;
+  }
+
+  return arr[low];
+};
+
+
+
+//
+
+//kth smallest-
+
+let arr1 = [3, 2, 1, 5, 6, 4]; 
+console.log(kthlargestElement(arr1, 0, 5, 2));
+
+
+let arr = [3,2,3,1,2,4,5,5,6];
+console.log(kthlargestElement(arr,0,8,4))
