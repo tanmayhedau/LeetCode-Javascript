@@ -13,3 +13,25 @@ const validAnagram = (s1, s2) => {
 };
 
 console.warn(validAnagram("anagram","nagaram"))
+
+
+var isAnagram = function(s, t) {
+  let mapS = {}
+  // let mapT = {}
+  if(s.length != t.length) return false
+  for(let i=0; i<s.length; i++){
+    mapS[s[i]] = mapS[s[i]] ? mapS[s[i]] +1 : 1
+       mapS[t[i]] = mapS[t[i]] ? mapS[t[i]] -1 : -1
+  }
+   for (let key in mapS) {
+      //  console.log(key)
+      if (mapS[key] !== 0) {
+          return false
+      }
+  }
+
+  return true
+};
+let s1 = 'anagram'
+let s2 = "naagram"
+console.log(isAnagram(s1,s2))
