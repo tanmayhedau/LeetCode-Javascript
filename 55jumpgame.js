@@ -8,4 +8,4 @@ const jumpGame = (nums) => {
   return true;
 };
 
-console.log(jumpGame([[2, 3, 1, 1, 4]]));
+console.log(jumpGame([2, 3, 1, 1, 4]));
