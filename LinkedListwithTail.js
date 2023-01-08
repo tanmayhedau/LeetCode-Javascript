@@ -117,5 +117,4 @@ list.removeFromFront();
 list.print();
 list.removeFromEnd();
 list.print();
-
 module.exports = LinkedList;
