@@ -45,7 +45,7 @@ var twoSumClosest = (arr, k) => {
 
   while (left < right) {
     let sum = arr[left] + arr[right];
-    let currdiff = Math.abs(sum - k);
+    let currdiff = Math.abs(sum - k); 
 
     currdiff = Math.max(currdiff, diff);
     a = arr[left];
