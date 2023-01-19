@@ -1,13 +1,14 @@
 // function issquareCheck(arr1, arr2) {
 //   for (let i = 0; i < arr1.length; i++) {
-//     let checksquare = false;
-
+//     let isSquare = false;
 //     for (let j = 0; j < arr2.length; j++) {
 //       if (arr1[i] * arr1[i] === arr2[j]) {
-//         checksquare = true;
+//         isSquare = true;
 //       }
-//       if (j === arr2.length - 1 && !checksquare) {
-//         return false;
+//       if (j === arr2.length - 1) {
+//         if (!isSquare) {
+//           return false;
+//         }
 //       }
 //     }
 //   }
@@ -29,12 +30,16 @@ function issquareCheck(arr1, arr2) {
   }
 
   for (let key in mp1) {
-    if (mp1[key] != mp2[key * key]) {
+    if (!mp2[key * key]) {
+      return false;
+    }
+
+    if (mp1[key] !== mp2[key * key]) {
       return false;
     }
   }
   return true;
-}   //tc O(n)  sc O(n)
+} //tc O(n)  sc O(n)
 
 let res = issquareCheck([1, 2, 3, 4], [1, 9, 4, 16]);
 console.log(res);

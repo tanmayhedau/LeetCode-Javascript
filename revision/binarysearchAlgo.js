@@ -17,4 +17,4 @@ let res = binarysearchAlgo(
   7
 );
 console.log(res);
-//tc O(log n)  sc O(n)
+//tc O(log n)  sc O(1)

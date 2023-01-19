@@ -15,7 +15,7 @@ function isAnagram(s1, s2) {
     mp[val] = -1;
   }
   return true;
-}  //tc=O(n)   sc=O(n)
+} //tc=O(n)   sc=O(n)
 
 let res = isAnagram("hello", "llheo");
 console.log(res);
