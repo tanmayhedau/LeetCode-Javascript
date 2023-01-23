@@ -6,11 +6,11 @@ function selectionsort(arr) {
         min = j;
       }
     }
-    if (i !== min) {
+    if (i != min) {
       [arr[i], arr[min]] = [arr[min], arr[i]];
     }
   }
   return arr;
-}   //tc  o(n^2)
+} //tc  o(n^2)
 
 console.log(selectionsort([77, 55, 33, 88, 99]));
