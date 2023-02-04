@@ -1,45 +1,61 @@
-//rotate matrix by 90 degree
-
-function rotate(matrix) {
-  //step 1 take transpose
+function rotateClockwise(matrix) {
   for (let i = 0; i < matrix.length; i++) {
     for (let j = i + 1; j < matrix[0].length; j++) {
-      //swap [i][j] with [j][i]
-      let temp = matrix[i][j];
-      matrix[i][j] = matrix[j][i];
-      matrix[j][i] = temp;
+      [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
     }
   }
+  console.log(matrix);
 
-  //   [
-  //     [1, 4, 7],
-  //     [2, 5, 8],
-  //     [3, 6, 9],
-  //   ];
-
-  //step 2 swap columns
   let left = 0;
   let right = matrix[0].length - 1;
   while (left < right) {
     for (let i = 0; i < matrix.length; i++) {
-      let temp = matrix[i][left];
-      matrix[i][left] = matrix[i][right];
-      matrix[i][right] = temp;
+      //swap columns
+      [matrix[i][left], matrix[i][right]] = [matrix[i][right], matrix[i][left]];
     }
     left++;
     right--;
   }
   return matrix;
 }
-
-// [
-//   [7, 4, 1],
-//   [8, 5, 2],
-//   [9, 6, 3],
-// ];
+// tc O(n^2)  sc O(1)
 
 console.log(
-  rotate([
+  rotateClockwise([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ])
+);
+
+function rotateAntiClockwise(matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = i + 1; j < matrix[0].length; j++) {
+      let temp = matrix[i][j];
+      matrix[i][j] = matrix[j][i];
+      matrix[j][i] = temp;
+    }
+  }
+  console.log(matrix);
+
+  let top = 0;
+  let bottom = matrix.length - 1;
+  while (top < bottom) {
+    for (let i = 0; i < matrix.length; i++) {
+      //swap rows
+      let temp = matrix[top][i];
+      matrix[top][i] = matrix[bottom][i];
+      matrix[bottom][i] = temp;
+    }
+    top++;
+    bottom--;
+  }
+  return matrix;
+}
+// tc O(n^2)  sc O(1)
+
+console.log(
+  rotateAntiClockwise([
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],

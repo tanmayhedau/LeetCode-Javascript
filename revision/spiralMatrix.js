@@ -1,42 +1,43 @@
-var spiralOrder = function (matrix) {
-  let n = matrix.length,
-    m = matrix[0].length,
-    left = 0,
-    top = 0,
-    right = m - 1,
-    bottom = n - 1,
-    size = n * m,
-    result = [];
+//spiral matrix
+function spiralOrder(matrix) {
+  let n = matrix.length;
+  let m = matrix[0].length;
+  let size = n * m;
+  let res = [];
+  let top = 0;
+  let bottom = n - 1;
+  let left = 0;
+  let right = m - 1;
 
-  while (result.length < size) {
-    //top
-    for (let i = left; i <= right && result.length < size; i++) {
-      result.push(matrix[top][i]);
+  while (res.length < size) {
+    //top boundary
+    for (let i = left; i <= right && res.length < size; i++) {
+      res.push(matrix[top][i]);
     }
     top++;
 
-    //right
-    for (let i = top; i <= bottom && result.length < size; i++) {
-      result.push(matrix[i][right]);
+    //right boundary
+    for (let i = top; i <= bottom && res.length < size; i++) {
+      res.push(matrix[i][right]);
     }
     right--;
 
-    //bottom
-    for (let i = right; i >= left && result.length < size; i--) {
-      result.push(matrix[bottom][i]);
+    //bottom boundary
+    for (let i = right; i >= left && res.length < size; i--) {
+      res.push(matrix[bottom][i]);
     }
     bottom--;
 
-    //left
-    for (let i = bottom; i >= top && result.length < size; i--) {
-      result.push(matrix[i][left]);
+    //left boundary
+    for (let i = bottom; i >= top && res.length < size; i--) {
+      res.push(matrix[i][left]);
     }
     left++;
   }
 
-  return result;
-};
-
+  return res;
+}
+//tc O(n*m)  sc O(n)
 console.log(
   spiralOrder([
     [1, 2, 3, 4, 5],
