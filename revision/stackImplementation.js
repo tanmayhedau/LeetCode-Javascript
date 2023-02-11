@@ -1,4 +1,4 @@
-class Queue {
+class Stack {
   constructor() {
     this.items = [];
   }
@@ -29,7 +29,7 @@ class Queue {
     return (this.items = []);
   }
 }
-let stack = new Queue();
+let stack = new Stack();
 console.log(stack.isEmpty());
 stack.add(1);
 stack.add(2);
